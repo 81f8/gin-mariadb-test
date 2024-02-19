@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      color: #c7254e;
+      border-radius: 4px;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>API Documentation</h1>
+
+  <h2>Get All Countries</h2>
+  <code>GET /countries</code>
+  <p>Returns a list of all countries.</p>
+  <h3>Example Request:</h3>
+  <pre>
+    GET /countries
+  </pre>
+  <h3>Example Response:</h3>
+  <pre>
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
+    [
+      {
+        "countryID": 1,
+        "countryName": "Country 1",
+        "area": 1000.0,
+        "language": "English",
+        "continentName": "Continent 1"
+      },
+      {
+        "countryID": 2,
+        "countryName": "Country 2",
+        "area": 2000.0,
+        "language": "French",
+        "continentName": "Continent 2"
+      },
+      ...
+    ]
+  </pre>
+
+  <h2>Get a Specific Country</h2>
+  <code>GET /countries/{id}</code>
+  <p>Returns the details of a specific country identified by its <code>id</code>.</p>
+  <h3>Example Request:</h3>
+  <pre>
+    GET /countries/1
+  </pre>
+  <h3>Example Response:</h3>
+  <pre>
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
+    {
+      "countryID": 1,
+      "countryName": "Country 1",
+      "area": 1000.0,
+      "language": "English",
+      "continentName": "Continent 1"
+    }
+  </pre>
+
+  <h2>Create a New Country</h2>
+  <code>POST /countries</code>
+  <p>Creates a new country with the provided data.</p>
+  <h3>Example Request:</h3>
+  <pre>
+    POST /countries
+    Content-Type: application/json
+
+    {
+      "countryName": "New Country",
+      "area": 1500.0
+    }
+  </pre>
+  <h3>Example Response:</h3>
+  <pre>
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+
+    {
+      "countryID": 3,
+      "countryName": "New Country",
+      "area": 1500.0
+    }
+  </pre>
+
+  <h2>Update an Existing Country</h2>
+  <code>PUT /countries/{id}</code>
+  <p>Updates the details of an existing country identified by its <code>id</code>.</p>
+  <h3>Example Request:</h3>
+  <pre>
+    PUT /countries/1
+    Content-Type: application/json
+
+    {
+      "countryName": "Updated Country",
+      "area": 1200.0
+    }
+  </pre>
+  <h3>Example Response:</h3>
+  <pre>
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
+    {
+      "message": "Country updated successfully"
+    }
+  </pre>
+
+  <h2>Delete a Country</h2>
+  <code>DELETE /countries/{id}</code>
+  <p>Deletes a country identified byits <code>id</code>.</p>
+<h3>Example Request:</h3>
+<pre>
+  DELETE /countries/1
+</pre>
+<h3>Example Response:</h3>
+<pre>
+ .....
+</pre>
+
+
+</body>
+</html>
